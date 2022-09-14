@@ -4,7 +4,7 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Patrik Eriksson's Page</title>
+    <title>Contact &#8211; Patrik Eriksson's Page</title>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
@@ -16,7 +16,7 @@
     <meta name="author" content="Patrik Eriksson">
     
     
-    <link rel="canonical" href="http://localhost:9009/">
+    <link rel="canonical" href="http://localhost:9009/contact/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Patrik Eriksson's Page" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -42,9 +42,9 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Patrik Eriksson&apos;s Page">
+    <meta property="og:title" content="Contact">
     <meta property="og:description" content="Personal Page of Patrik Eriksson">
-    <meta property="og:url" content="http://localhost:9009/">
+    <meta property="og:url" content="http://localhost:9009/contact/">
     <meta property="og:site_name" content="Patrik Eriksson&apos;s Page">
     
 
@@ -54,9 +54,9 @@
         <meta name="twitter:site" content="@patrikord" />
         <meta name="twitter:creator" content="@patrikord" />
     
-    <meta name="twitter:title" content="Patrik Eriksson's Page" />
+    <meta name="twitter:title" content="Contact" />
     <meta name="twitter:description" content="Personal Page of Patrik Eriksson" />
-    <meta name="twitter:url" content="http://localhost:9009/" />
+    <meta name="twitter:url" content="http://localhost:9009/contact/" />
     
 
     <!-- Icons -->
@@ -115,7 +115,7 @@
     
     
     
-        <a class="nav-link" href="/contact/">Contact</a>
+        <a class="nav-active" href="/contact/">Contact</a>
     
 
     
@@ -164,31 +164,35 @@
 
     <div class="post p2 p-responsive wrap" role="main">
       <div class="measure">
-        
-
-<div class="home">
+        <div class="post">
+  <header class="post-header">
+    <h1 class="h2">Contact</h1>
+  </header>
+  <article class="post-content">
+  <div class="py2">
   
-    <div class="posts">
-      
-        <div class="post py3">
-          <p class="post-meta">
-	    
-	      2022, Aug 25
-	    
-	  </p>
-          <a href="/syncnote/kotlin/apps/windows/android/linux/2022/08/25/syncnote-alpha/" class="post-link"><h3 class="h1 post-title">SyncNote Alpha Dev Release</h3></a>
-          <span class="post-summary">
-            
-              SyncNote is now up on Github!
-            
-          </span>
-        </div>
-      
-    </div>
+    <form action="https://formspree.io/patrikersn@gmail.com" method="POST" class="form-stacked">
+      <label>
+        Email
+        <input type="text" name="email" class="field-light" placeholder="Your Email Address">
+      </label>
+      <label>
+        Content
+        <textarea type="text" name="content" class="field-light" rows="5" placeholder="Your message" style="resize: vertical"></textarea>
+      </label>
 
-    
+      <input type="hidden" name="_next" value="/thanks/" />
+      <input type="hidden" name="_subject" value="Mail from github.io site!" />
+      <input type="text" name="_gotcha" style="display:none" />
 
+      <input type="submit" class="button button-blue button-big mobile-block" value="Mail Patrik">
+    </form>
   
+</div>
+
+
+
+  </article>
 </div>
 
       </div>

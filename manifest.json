@@ -1,0 +1,22 @@
+{
+  "short_name": "Patrik Eriksson's Page",
+  "name": "Patrik Eriksson's Page",
+  "description": "Personal Page of Patrik Eriksson",
+  "icons": [
+    {
+      "src": "/splash-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/favicon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#ffffff"
+}
