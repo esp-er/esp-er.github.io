@@ -8,13 +8,17 @@
     
       <item>
         <title>SyncNote Alpha Dev Release</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://i.ibb.co/pw9hMkJ/syncfresh-64.png&quot; alt=&quot;icon&quot; /&gt;
-I am happy to announce the release of
+        <description>&lt;p&gt;I am happy to announce the alpha release of
 SyncNote, a simple notes app for Android and PC
 which lets you easily synchronize your notes between
 your mobile and PC devices. The app is developed
 using Jetpack Compose and Jetbrains Compose Desktop
-for the JVM release.&lt;/p&gt;
+for the JVM release, I used Kotlin Multiplatform to share 
+source-code between platforms. I developed this app
+during the last few months as a personal exercise.&lt;/p&gt;
+
+&lt;p&gt;You can see the source code at:
+&lt;a href=&quot;https://github.com/esp-er/syncnote&quot;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 25 Aug 2022 12:53:00 +0900</pubDate>
