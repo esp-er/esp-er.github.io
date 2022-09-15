@@ -41,25 +41,25 @@ during the last few months as a personal exercise.</p>
     
         
             <item>
-                <title>An new, easier way of improving JVM-startup time using Java 19</title>
+                <title>A new, easier way of improving JVM-startup time using Java 19</title>
                 <link>http://localhost:9009/jvm/java/apps/dev/2022/07/15/jdk19-appcds/</link>
                 <content:encoded>
                     <![CDATA[
-                    <p>Dynamic CDS has been available with since Java JDK version 12. Depending on your program,
-enabling it can result in slight startup-time improvement, or even &gt; 3x for larger applications.
-I recommend using in order to improve startup time for all your Java programs.
-Enabling dynamic CDS usually involves first adding a flag in the java startup command for
-initial creation of the archive, such as:</p>
+                    <p>Dynamic CDS with Java has been available with since JDK version 12. Depending on your program,
+enabling it can result in slight startup-time improvement, or as much as &gt; 3x for larger applications.
+I recommend always using it in order to improve startup time for all your Java programs.
+Enabling dynamic CDS usually involves: first adding a flag in the <code class="language-plaintext highlighter-rouge">java</code> startup command for
+initially creating the archive, use a command such as:</p>
 
 <p><code class="language-plaintext highlighter-rouge">java -XX:ArchiveClassesAtExit=archive.jsa -jar yourapp.jar</code></p>
 
-<p>The shared class data file archive be written as archive.jsa in your current directory.
-Then, to enable use of CDS, after the previous step you have to supply a different flag in order to load
-and use the archive, on all subsequent runs:</p>
+<p>The shared class data archive will be written as archive.jsa in your current directory.
+Then, to enable use of CDS, after completing the previous step, you have to supply a different flag in order to use the archive.</p>
 
 <p><code class="language-plaintext highlighter-rouge">java -XX:SharedArchiveFile=archive.jsa -jar yourapp.jar</code></p>
 
-<p>After jumping through these hoops you could finally enjoy faster startup times.</p>
+<p>The ShareDArchiveFile command line argument must be used on all subsequent runs.
+After jumping through these hoops you could finally enjoy faster startup times.</p>
 
 <p>But wait there’s more! It seems that using 2 steps in order achieve this functionality would be redundant.
 Oracle has thought of us developers and made our lives
@@ -80,7 +80,7 @@ the archive will be loaded automatically and used during class loading. Just ent
                 <guid isPermaLink="false">/jvm/java/apps/dev/2022/07/15/jdk19-appcds/</guid>
                 <description>
                     
-                    Java 19 adds new JVM startup flags for enabling Dynamic CDS archives
+                    Java 19 adds new JVM startup command-line arguments for enabling Dynamic CDS archives
                     
                 </description>
                 <pubDate>Fri, 15 Jul 2022 23:09:00 +0900</pubDate>
