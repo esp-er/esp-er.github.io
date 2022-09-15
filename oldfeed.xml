@@ -27,7 +27,7 @@ during the last few months as a personal exercise.&lt;/p&gt;
       </item>
     
       <item>
-        <title>A new, easier way of improving JVM-startup time using Java 19</title>
+        <title>A new, easier way of improving JVM startup-time using Java 19</title>
         <description>&lt;p&gt;Dynamic CDS with Java has been available with since JDK version 12. Depending on your program,
 enabling it can result in slight startup-time improvement, or as much as &amp;gt; 3x for larger applications.
 I recommend always using it in order to improve startup time for all your Java programs.
@@ -41,11 +41,11 @@ Then, to enable use of CDS, after completing the previous step, you have to supp
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;java -XX:SharedArchiveFile=archive.jsa -jar yourapp.jar&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;The ShareDArchiveFile command line argument must be used on all subsequent runs.
-After jumping through these hoops you could finally enjoy faster startup times.&lt;/p&gt;
+&lt;p&gt;The SharedArchiveFile command line argument must be used on all subsequent runs.
+After jumping through these hoops you can finally enjoy faster startup times.&lt;/p&gt;
 
-&lt;p&gt;But wait there’s more! It seems that using 2 steps in order achieve this functionality would be redundant.
-Oracle has thought of us developers and made our lives
+&lt;p&gt;But wait, there’s more! It seems that using 2 steps in order achieve this functionality would be redundant.
+Oracle has thought of us developers and helped to make our lives
 slightly easier: starting from Java 19, developers can use a new flag called
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-XX:AutoCreateSharedArchive&lt;/code&gt; together with previously existing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-XX:SharedArchiveFile=&lt;/code&gt;.&lt;/p&gt;
 

@@ -4,7 +4,7 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>A new, easier way of improving JVM-startup time using Java 19 &#8211; Patrik Eriksson's Page</title>
+    <title>A new, easier way of improving JVM startup-time using Java 19 &#8211; Patrik Eriksson's Page</title>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
@@ -20,7 +20,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Patrik Eriksson's Page" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?202209151155" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202209151157" type="text/css">
 
     <!-- Fonts -->
     
@@ -42,7 +42,7 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="A new, easier way of improving JVM-startup time using Java 19">
+    <meta property="og:title" content="A new, easier way of improving JVM startup-time using Java 19">
     <meta property="og:description" content="Personal Page of Patrik Eriksson">
     <meta property="og:url" content="http://localhost:9009/jvm/java/apps/dev/2022/07/15/jdk19-appcds/">
     <meta property="og:site_name" content="Patrik Eriksson&apos;s Page">
@@ -54,7 +54,7 @@
         <meta name="twitter:site" content="@patrikord" />
         <meta name="twitter:creator" content="@patrikord" />
     
-    <meta name="twitter:title" content="A new, easier way of improving JVM-startup time using Java 19" />
+    <meta name="twitter:title" content="A new, easier way of improving JVM startup-time using Java 19" />
     <meta name="twitter:description" content="Java 19 adds new JVM startup command-line arguments for enabling Dynamic CDS archives" />
     <meta name="twitter:url" content="http://localhost:9009/jvm/java/apps/dev/2022/07/15/jdk19-appcds/" />
     
@@ -168,7 +168,7 @@
  -->
 
 <div class="post-header mb2">
-  <h1>A new, easier way of improving JVM-startup time using Java 19</h1>
+  <h1>A new, easier way of improving JVM startup-time using Java 19</h1>
   <span class="post-meta">2022, Jul 15</span><br>
   
   <span class="post-meta small">
@@ -190,11 +190,11 @@ Then, to enable use of CDS, after completing the previous step, you have to supp
 
 <p><code class="language-plaintext highlighter-rouge">java -XX:SharedArchiveFile=archive.jsa -jar yourapp.jar</code></p>
 
-<p>The ShareDArchiveFile command line argument must be used on all subsequent runs.
-After jumping through these hoops you could finally enjoy faster startup times.</p>
+<p>The SharedArchiveFile command line argument must be used on all subsequent runs.
+After jumping through these hoops you can finally enjoy faster startup times.</p>
 
-<p>But wait there’s more! It seems that using 2 steps in order achieve this functionality would be redundant.
-Oracle has thought of us developers and made our lives
+<p>But wait, there’s more! It seems that using 2 steps in order achieve this functionality would be redundant.
+Oracle has thought of us developers and helped to make our lives
 slightly easier: starting from Java 19, developers can use a new flag called
 <code class="language-plaintext highlighter-rouge">-XX:AutoCreateSharedArchive</code> together with previously existing <code class="language-plaintext highlighter-rouge">-XX:SharedArchiveFile=</code>.</p>
 

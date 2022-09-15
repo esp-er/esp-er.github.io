@@ -41,7 +41,7 @@ during the last few months as a personal exercise.</p>
     
         
             <item>
-                <title>A new, easier way of improving JVM-startup time using Java 19</title>
+                <title>A new, easier way of improving JVM startup-time using Java 19</title>
                 <link>http://localhost:9009/jvm/java/apps/dev/2022/07/15/jdk19-appcds/</link>
                 <content:encoded>
                     <![CDATA[
@@ -58,11 +58,11 @@ Then, to enable use of CDS, after completing the previous step, you have to supp
 
 <p><code class="language-plaintext highlighter-rouge">java -XX:SharedArchiveFile=archive.jsa -jar yourapp.jar</code></p>
 
-<p>The ShareDArchiveFile command line argument must be used on all subsequent runs.
-After jumping through these hoops you could finally enjoy faster startup times.</p>
+<p>The SharedArchiveFile command line argument must be used on all subsequent runs.
+After jumping through these hoops you can finally enjoy faster startup times.</p>
 
-<p>But wait there’s more! It seems that using 2 steps in order achieve this functionality would be redundant.
-Oracle has thought of us developers and made our lives
+<p>But wait, there’s more! It seems that using 2 steps in order achieve this functionality would be redundant.
+Oracle has thought of us developers and helped to make our lives
 slightly easier: starting from Java 19, developers can use a new flag called
 <code class="language-plaintext highlighter-rouge">-XX:AutoCreateSharedArchive</code> together with previously existing <code class="language-plaintext highlighter-rouge">-XX:SharedArchiveFile=</code>.</p>
 
