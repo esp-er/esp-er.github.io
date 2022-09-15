@@ -26,5 +26,42 @@ during the last few months as a personal exercise.&lt;/p&gt;
         <guid isPermaLink="true">http://localhost:9009/syncnote/kotlin/apps/windows/android/linux/2022/08/25/syncnote-alpha/</guid>
       </item>
     
+      <item>
+        <title>An new, easier way of improving JVM-startup time using Java 19</title>
+        <description>&lt;p&gt;Dynamic CDS has been available with since Java JDK version 12. Depending on your program,
+enabling it can result in slight startup-time improvement, or even &amp;gt; 3x for larger applications.
+I recommend using in order to improve startup time for all your Java programs.
+Enabling dynamic CDS usually involves first adding a flag in the java startup command for
+initial creation of the archive, such as:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;java -XX:ArchiveClassesAtExit=archive.jsa -jar yourapp.jar&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The shared class data file archive be written as archive.jsa in your current directory.
+Then, to enable use of CDS, after the previous step you have to supply a different flag in order to load
+and use the archive, on all subsequent runs:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;java -XX:SharedArchiveFile=archive.jsa -jar yourapp.jar&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;After jumping through these hoops you could finally enjoy faster startup times.&lt;/p&gt;
+
+&lt;p&gt;But wait there’s more! It seems that using 2 steps in order achieve this functionality would be redundant.
+Oracle has thought of us developers and made our lives
+slightly easier: starting from Java 19, developers can use a new flag called
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-XX:AutoCreateSharedArchive&lt;/code&gt; together with previously existing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-XX:SharedArchiveFile=&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now, we can simply run a single command to save us some and effort, the archive
+will be created after first run and exit of the application. After the first run,
+the archive will be loaded automatically and used during class loading. Just enter both flags in your Java startup command:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;java -XX:+AutoCreateSharedArchive -XX:SharedArchiveFile=archive.jsa -jar yourapp.jar&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Enjoy  your fast JVM startups! Using just 1 command!&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 15 Jul 2022 23:09:00 +0900</pubDate>
+        <link>http://localhost:9009/jvm/java/apps/dev/2022/07/15/jdk19-appcds/</link>
+        <guid isPermaLink="true">http://localhost:9009/jvm/java/apps/dev/2022/07/15/jdk19-appcds/</guid>
+      </item>
+    
   </channel>
 </rss>

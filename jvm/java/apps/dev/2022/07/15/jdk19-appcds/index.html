@@ -4,19 +4,19 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Contact &#8211; Patrik Eriksson's Page</title>
+    <title>An new, easier way of improving JVM-startup time using Java 19 &#8211; Patrik Eriksson's Page</title>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Personal Page of Patrik Eriksson">
+    <meta name="description" content="Java 19 adds new JVM startup flags for enabling Dynamic CDS archives">
     <link rel="manifest" type="application/manifest+json; charset=utf-8" href="/manifest.json" />
     <meta name="robots" content="all">
     <meta name="author" content="Patrik Eriksson">
     
-    
-    <link rel="canonical" href="http://localhost:9009/contact/">
+    <meta name="keywords" content="jvm, java, apps, dev">
+    <link rel="canonical" href="http://localhost:9009/jvm/java/apps/dev/2022/07/15/jdk19-appcds/">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Patrik Eriksson's Page" href="/feed.xml" />
 
     <!-- Custom CSS -->
@@ -42,9 +42,9 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Contact">
+    <meta property="og:title" content="An new, easier way of improving JVM-startup time using Java 19">
     <meta property="og:description" content="Personal Page of Patrik Eriksson">
-    <meta property="og:url" content="http://localhost:9009/contact/">
+    <meta property="og:url" content="http://localhost:9009/jvm/java/apps/dev/2022/07/15/jdk19-appcds/">
     <meta property="og:site_name" content="Patrik Eriksson&apos;s Page">
     
 
@@ -54,9 +54,9 @@
         <meta name="twitter:site" content="@patrikord" />
         <meta name="twitter:creator" content="@patrikord" />
     
-    <meta name="twitter:title" content="Contact" />
-    <meta name="twitter:description" content="Personal Page of Patrik Eriksson" />
-    <meta name="twitter:url" content="http://localhost:9009/contact/" />
+    <meta name="twitter:title" content="An new, easier way of improving JVM-startup time using Java 19" />
+    <meta name="twitter:description" content="Java 19 adds new JVM startup flags for enabling Dynamic CDS archives" />
+    <meta name="twitter:url" content="http://localhost:9009/jvm/java/apps/dev/2022/07/15/jdk19-appcds/" />
     
 
     <!-- Icons -->
@@ -115,7 +115,7 @@
     
     
     
-        <a class="nav-active" href="/contact/">Contact</a>
+        <a class="nav-link" href="/contact/">Contact</a>
     
 
     
@@ -164,36 +164,60 @@
 
     <div class="post p2 p-responsive wrap" role="main">
       <div class="measure">
-        <div class="post">
-  <header class="post-header">
-    <h1 class="h2">Contact</h1>
-  </header>
-  <article class="post-content">
-  <div class="py2">
-  
-    <form action="https://formspree.io/patrikersn@gmail.com" method="POST" class="form-stacked">
-      <label>
-        Email
-        <input type="text" name="email" class="field-light" placeholder="Your Email Address">
-      </label>
-      <label>
-        Content
-        <textarea type="text" name="content" class="field-light" rows="5" placeholder="Your message" style="resize: vertical"></textarea>
-      </label>
+        <!-- 
+ -->
 
-      <input type="hidden" name="_next" value="/thanks/" />
-      <input type="hidden" name="_subject" value="Mail from github.io site!" />
-      <input type="text" name="_gotcha" style="display:none" />
-
-      <input type="submit" class="button button-blue button-big mobile-block" value="Mail Patrik">
-    </form>
+<div class="post-header mb2">
+  <h1>An new, easier way of improving JVM-startup time using Java 19</h1>
+  <span class="post-meta">2022, Jul 15</span><br>
   
+  <span class="post-meta small">
+  
+  </span>
 </div>
 
+<article class="post-content">
+  <p>Dynamic CDS has been available with since Java JDK version 12. Depending on your program,
+enabling it can result in slight startup-time improvement, or even &gt; 3x for larger applications.
+I recommend using in order to improve startup time for all your Java programs.
+Enabling dynamic CDS usually involves first adding a flag in the java startup command for
+initial creation of the archive, such as:</p>
+
+<p><code class="language-plaintext highlighter-rouge">java -XX:ArchiveClassesAtExit=archive.jsa -jar yourapp.jar</code></p>
+
+<p>The shared class data file archive be written as archive.jsa in your current directory.
+Then, to enable use of CDS, after the previous step you have to supply a different flag in order to load
+and use the archive, on all subsequent runs:</p>
+
+<p><code class="language-plaintext highlighter-rouge">java -XX:SharedArchiveFile=archive.jsa -jar yourapp.jar</code></p>
+
+<p>After jumping through these hoops you could finally enjoy faster startup times.</p>
+
+<p>But wait there’s more! It seems that using 2 steps in order achieve this functionality would be redundant.
+Oracle has thought of us developers and made our lives
+slightly easier: starting from Java 19, developers can use a new flag called
+<code class="language-plaintext highlighter-rouge">-XX:AutoCreateSharedArchive</code> together with previously existing <code class="language-plaintext highlighter-rouge">-XX:SharedArchiveFile=</code>.</p>
+
+<p>Now, we can simply run a single command to save us some and effort, the archive
+will be created after first run and exit of the application. After the first run,
+the archive will be loaded automatically and used during class loading. Just enter both flags in your Java startup command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">java -XX:+AutoCreateSharedArchive -XX:SharedArchiveFile=archive.jsa -jar yourapp.jar</code></p>
+
+<p>Enjoy  your fast JVM startups! Using just 1 command!</p>
 
 
-  </article>
-</div>
+</article>
+
+
+
+
+
+
+
+
+
+
 
       </div>
     </div>
