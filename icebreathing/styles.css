@@ -7,10 +7,49 @@
     position: relative;
 }
 
-h2{
-    color: #b5aba8;
+@font-face {
+  font-family: Roboto;
+  src: url(Roboto-Regular.woff);
 }
 
+#canvas{
+  width: 600px;
+  height: 800px;
+  outline: 1px solid white;
+  border-radius: 18px;
+}
+
+#download{
+  margin-top: 8px;
+  margin-left: 12px;
+}
+
+.header{
+    height: 48px;
+}
+
+h2{
+    vertical-align: top;
+    display: inline;
+    color: white;
+    font-family: Roboto;
+}
+h3{
+    position: relative;
+    top: -6px;
+    display: inline;
+    color: white;
+    font-family: Roboto;
+}
+h4{
+    position: relative;
+    margin-left: 12px;
+    color: white;
+    display: inline;
+    font-family: Roboto;
+}
+
+
 body{
-    background-color: black;
+    background-color: #1b1939;
  }
