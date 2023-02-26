@@ -1,0 +1,22 @@
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Sparkle App Cast for ARM Changelog</title>
+        <link>https://esp-er.github.io/icebreathing/binaries/appcast-aarch64.rss</link>
+        <description>Most recent changes with links to updates.</description>
+        <language>en</language>
+        <item>
+            <title>Version 0.2.0</title>
+            <link>https://esp-er.github.io/icebreathing/binaries/</link>
+            <sparkle:version>0.2.0</sparkle:version>
+            <description>
+                <![CDATA[ New release: version 0.2.0 ]]>
+            </description>
+            <pubDate>Sun, 26 Feb 2023 01:20:11 GMT</pubDate>
+            <enclosure url="https://esp-er.github.io/icebreathing/binaries/ice-breathing-0.2-mac-aarch64.zip" 
+                       length="93799276" 
+                       type="application/octet-stream" 
+                       sparkle:edSignature="1ftQLgGmywfXISX53BQWyMclakzyG2/CZ5Z+bzo+5VD10zDW4ctWazDgVMkIE1VUY60uGR8mWUih9b6qaIriAw=="/>
+        </item>
+            
+    </channel>
+</rss>

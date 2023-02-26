@@ -1,0 +1,22 @@
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Sparkle App Cast for Intel Changelog</title>
+        <link>https://esp-er.github.io/icebreathing/binaries/appcast-amd64.rss</link>
+        <description>Most recent changes with links to updates.</description>
+        <language>en</language>
+        <item>
+            <title>Version 0.2.0</title>
+            <link>https://esp-er.github.io/icebreathing/binaries/</link>
+            <sparkle:version>0.2.0</sparkle:version>
+            <description>
+                <![CDATA[ New release: version 0.2.0 ]]>
+            </description>
+            <pubDate>Sun, 26 Feb 2023 01:20:11 GMT</pubDate>
+            <enclosure url="https://esp-er.github.io/icebreathing/binaries/ice-breathing-0.2-mac-amd64.zip" 
+                       length="86479981" 
+                       type="application/octet-stream" 
+                       sparkle:edSignature="GVOOB4gwaU2XCdPOaHqWVvYkGJ83wxzQReSBjVbxfpZhxb4gz7p+r1if+h+j4+tZfvHdiXa7JQJpq2AbL758DQ=="/>
+        </item>
+            
+    </channel>
+</rss>
