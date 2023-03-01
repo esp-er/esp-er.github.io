@@ -11,11 +11,11 @@
             <description>
                 <![CDATA[ New release: version 0.3.0 ]]>
             </description>
-            <pubDate>Wed, 1 Mar 2023 07:54:13 GMT</pubDate>
+            <pubDate>Wed, 1 Mar 2023 08:19:16 GMT</pubDate>
             <enclosure url="https://esp-er.github.io/icebreathing/binaries/ice-breathing-0.3-mac-amd64.zip" 
-                       length="86479834" 
+                       length="86478252" 
                        type="application/octet-stream" 
-                       sparkle:edSignature="ltHrHS1iLfmVJiae/APUyi9MA/HLcOfunvAloLMYQGti80qjf5dZ5TVhdi5qsBwjOC1GtkVLJo6TL3HQnSF8Cw=="/>
+                       sparkle:edSignature="7WpsXNsefrTdeUf0cX+svDa94TnhgUaf+MPa/UsBf2+7sXeD027Klfr3dAVBeTJBpQYeyf5w/6C6dGbBALXbDA=="/>
         </item>
             
     </channel>
